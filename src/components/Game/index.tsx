@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Board from "../Board/index.tsx";
-import Button from "../Button";
+import Button from "../Button/index.tsx";
 function Game(): JSX.Element {
   const [nextPlayer, setNextPlayer] = useState("X");
   const [winner, setWinner] = useState(null);
