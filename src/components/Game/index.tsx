@@ -1,8 +1,8 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import Board from "../Board";
+import Board from "../Board/index.tsx";
 import Button from "../Button";
-function Game() {
+function Game(): JSX.Element {
   const [nextPlayer, setNextPlayer] = useState("X");
   const [winner, setWinner] = useState(null);
 
@@ -18,8 +18,8 @@ function Game() {
     null,
   ]);
 
-  function calculateWinner(squares) {
-    const lines = [
+  function calculateWinner(squares: []) {
+    const lines: [number, number, number][] = [
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
@@ -29,7 +29,7 @@ function Game() {
       [0, 4, 8],
       [2, 4, 6],
     ];
-    for (let i = 0; i < lines.length; i++) {
+    for (let i: number = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (
         squares[a] &&
