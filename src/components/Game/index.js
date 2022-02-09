@@ -43,21 +43,21 @@ function Game() {
 
   useEffect(() => {
     let result = calculateWinner(board);
-    if(result){
-      setWinner(result)
+    if (result) {
+      setWinner(result);
     }
-
   }, [board]);
 
   return (
     <div className="App">
       <Board
-      winner={winner}
+        winner={winner}
         setBoard={setBoard}
         board={board}
         nextPlayer={nextPlayer}
         setNextPlayer={setNextPlayer}
       />
+
       <div> next player: {nextPlayer}</div>
       <div>Winner: {winner}</div>
     </div>

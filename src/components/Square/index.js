@@ -14,6 +14,7 @@ const Square = ({
     if (value || winner) {
       return;
     }
+
     let newBoard = [
       ...board.slice(0, index),
       nextPlayer,
