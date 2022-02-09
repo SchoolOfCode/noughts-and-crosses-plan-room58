@@ -10,6 +10,9 @@ const Square = ({
   setNextPlayer,
 }) => {
   function handleClick() {
+    if (value) {
+      return;
+    }
     let newBoard = [
       ...board.slice(0, index),
       nextPlayer,
