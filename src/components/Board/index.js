@@ -1,27 +1,14 @@
 import React from 'react'
 import Square from '../Square'
 import css from './board.module.css'
-const Board = () => {
+const Board = ({board, setBoard}) => {
 
     return (
         <div className={css.board}>
-       <Square />
-            
-       <Square />
-            
-       <Square />
-            
-       <Square />
-            
-       <Square />
-            
-       <Square />
-            
-       <Square />
-            
-       <Square />
-            
-       <Square />
+        {board.map((square) =>{
+            return <Square />
+        }) 
+        }
             
         </div>
     )
