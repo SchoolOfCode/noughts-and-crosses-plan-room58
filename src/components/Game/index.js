@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import Board from '../Board';
+import Button from '../Button'
 function Game() {
   const [nextPlayer, setNextPlayer] = useState('X');
   const [winner, setWinner] = useState(null);
@@ -60,6 +61,7 @@ function Game() {
 
       <div> next player: {nextPlayer}</div>
       <div>Winner: {winner}</div>
+      {winner && <Button setBoard={setBoard} setWinner ={setWinner} setNextPlayer ={setNextPlayer}/>}
     </div>
   );
 }
