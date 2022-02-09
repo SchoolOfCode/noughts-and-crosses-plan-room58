@@ -1,9 +1,9 @@
-import './App.css';
-import { useState, useEffect } from 'react';
-import Board from '../Board';
-import Button from '../Button'
+import "./App.css";
+import { useState, useEffect } from "react";
+import Board from "../Board";
+import Button from "../Button";
 function Game() {
-  const [nextPlayer, setNextPlayer] = useState('X');
+  const [nextPlayer, setNextPlayer] = useState("X");
   const [winner, setWinner] = useState(null);
 
   const [board, setBoard] = useState([
@@ -39,11 +39,17 @@ function Game() {
         return squares[a];
       }
     }
+
+    if (squares.every((square) => square !== null)) {
+      return "DRAW";
+    }
+
     return null;
   }
 
   useEffect(() => {
     let result = calculateWinner(board);
+
     if (result) {
       setWinner(result);
     }
@@ -59,9 +65,19 @@ function Game() {
         setNextPlayer={setNextPlayer}
       />
 
-      <div> next player: {nextPlayer}</div>
-      <div>Winner: {winner}</div>
-      {winner && <Button setBoard={setBoard} setWinner ={setWinner} setNextPlayer ={setNextPlayer}/>}
+      {!winner && <div> next player: {nextPlayer}</div>}
+      {winner === "DRAW" ? (
+        <div>Result: {winner}</div>
+      ) : (
+        <div>Winner: {winner}</div>
+      )}
+      {winner && (
+        <Button
+          setBoard={setBoard}
+          setWinner={setWinner}
+          setNextPlayer={setNextPlayer}
+        />
+      )}
     </div>
   );
 }
