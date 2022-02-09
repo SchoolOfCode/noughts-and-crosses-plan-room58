@@ -1,7 +1,7 @@
 import React from "react";
 import Square from "../Square";
 import css from "./board.module.css";
-const Board = ({ board, setBoard, nextPlayer }) => {
+const Board = ({ board, setBoard, nextPlayer, setNextPlayer }) => {
   return (
     <div className={css.board}>
       {board.map((square, index) => {
@@ -13,6 +13,7 @@ const Board = ({ board, setBoard, nextPlayer }) => {
             index={index}
             board={board}
             nextPlayer={nextPlayer}
+            setNextPlayer={setNextPlayer}
           />
         );
       })}
