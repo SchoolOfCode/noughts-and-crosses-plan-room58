@@ -1,5 +1,5 @@
-import React from "react";
-import css from "./square.module.css";
+import React from 'react';
+import css from './square.module.css';
 
 const Square = ({
   value,
@@ -8,8 +8,12 @@ const Square = ({
   board,
   nextPlayer,
   setNextPlayer,
+  winner,
 }) => {
   function handleClick() {
+    if (value || winner) {
+      return;
+    }
     let newBoard = [
       ...board.slice(0, index),
       nextPlayer,
@@ -20,10 +24,10 @@ const Square = ({
   }
 
   function changePlayer(currentPlayer) {
-    if (currentPlayer === "X") {
-      setNextPlayer("O");
+    if (currentPlayer === 'X') {
+      setNextPlayer('O');
     } else {
-      setNextPlayer("X");
+      setNextPlayer('X');
     }
   }
 
