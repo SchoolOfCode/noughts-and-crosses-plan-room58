@@ -3,7 +3,7 @@ import Square from '../Square';
 import css from './board.module.css';
 const Board = ({ board, setBoard, nextPlayer, setNextPlayer, winner }) => {
   return (
-    <div className={css.board}>
+    <div className={css.board} data-testid='boardContainer'>
       {board.map((square, index) => {
         return (
           <Square

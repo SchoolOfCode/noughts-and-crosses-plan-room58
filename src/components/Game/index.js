@@ -65,7 +65,7 @@ function Game() {
         setNextPlayer={setNextPlayer}
       />
 
-      {!winner && <div> next player: {nextPlayer}</div>}
+      {!winner && <div data-testid='nextPlayer'> next player: {nextPlayer}</div>}
       {winner === "DRAW" ? (
         <div>Result: {winner}</div>
       ) : (
