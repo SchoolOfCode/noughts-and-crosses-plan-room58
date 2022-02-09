@@ -6,17 +6,7 @@ function Game() {
   const [nextPlayer, setNextPlayer] = useState("X");
   const [winner, setWinner] = useState(null);
 
-  const [board, setBoard] = useState([
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ]);
+  const [board, setBoard] = useState(Array(9).fill(null));
 
   function calculateWinner(squares) {
     const lines = [
