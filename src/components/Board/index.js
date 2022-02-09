@@ -1,17 +1,23 @@
-import React from 'react'
-import Square from '../Square'
-import css from './board.module.css'
-const Board = ({board, setBoard}) => {
+import React from "react";
+import Square from "../Square";
+import css from "./board.module.css";
+const Board = ({ board, setBoard, nextPlayer }) => {
+  return (
+    <div className={css.board}>
+      {board.map((square, index) => {
+        return (
+          <Square
+            key={index}
+            value={square}
+            setBoard={setBoard}
+            index={index}
+            board={board}
+            nextPlayer={nextPlayer}
+          />
+        );
+      })}
+    </div>
+  );
+};
 
-    return (
-        <div className={css.board}>
-        {board.map((square) =>{
-            return <Square />
-        }) 
-        }
-            
-        </div>
-    )
-}
-
-export default Board
+export default Board;
